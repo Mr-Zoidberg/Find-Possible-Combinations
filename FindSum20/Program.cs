@@ -8,8 +8,10 @@ namespace FindSum20
     {
         static void Main(string[] args)
         {
-            var numbers = new List<int> { 12, 6, 5, 4, 7, 9, 3, 1, 3, 10, 12, 3, 9, 8, 4, 5, 7, 10 };
-            Console.WriteLine($"Number of Combinations: {SumCounter(numbers, 20)}");
+            const int target = 20;
+            var numbers = new List<int> { 1, 2, 5, 8, 12, 14, 9 };
+ 
+            Console.WriteLine($"Number of Combinations: {SumCounter(numbers, target)}");
             Console.ReadKey();
         }
 
@@ -36,14 +38,12 @@ namespace FindSum20
             for (var i = 0; i < numbers.Count; i++)
             {
                 var remaining = new List<int>();
-                var n = numbers[i];
                 for (var j = i + 1; j < numbers.Count; j++) remaining.Add(numbers[j]);
-
-                var partRec = new List<int>(partial) {n};
+                var partRec = new List<int>(partial) { numbers[i] };
                 RecursiveCounter(remaining, target, partRec, ref result);
             }
         }
     }
-
 }
 
+ 
