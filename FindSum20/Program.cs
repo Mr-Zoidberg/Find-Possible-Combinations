@@ -32,8 +32,7 @@ namespace FindSum20
                 Console.WriteLine(string.Join(" + ", partial.ToArray()) + " = " + target);
             }
 
-            if (sum >= target)
-                return;
+            if (sum >= target) return;
 
             for (var i = 0; i < numbers.Count; i++)
             {
