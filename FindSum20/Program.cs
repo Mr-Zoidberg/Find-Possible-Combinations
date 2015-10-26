@@ -19,7 +19,6 @@ namespace FindSum20
 
             stopWatch.Stop();
             Console.WriteLine($"Elapsed time: {stopWatch.Elapsed}");
-
             Console.ReadKey();
         }
 
