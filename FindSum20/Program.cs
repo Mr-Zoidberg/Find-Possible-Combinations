@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace FindSum20
@@ -10,8 +11,15 @@ namespace FindSum20
         {
             const int target = 20;
             var numbers = new List<int> { 1, 2, 5, 8, 12, 14, 9 };
- 
+
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             Console.WriteLine($"Number of Combinations: {SumCounter(numbers, target)}");
+
+            stopWatch.Stop();
+            Console.WriteLine($"Elapsed time: {stopWatch.Elapsed}");
+
             Console.ReadKey();
         }
 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindSum20", "FindSum20\Find
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqSubsets", "LinqSubsets\LinqSubsets.csproj", "{542D6BB7-C6E2-4010-9D3B-C98CE92F0604}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdVariant", "ThirdVariant\ThirdVariant.csproj", "{29C8381C-0105-4E48-9363-47270E89B984}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{542D6BB7-C6E2-4010-9D3B-C98CE92F0604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{542D6BB7-C6E2-4010-9D3B-C98CE92F0604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{542D6BB7-C6E2-4010-9D3B-C98CE92F0604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C8381C-0105-4E48-9363-47270E89B984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C8381C-0105-4E48-9363-47270E89B984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C8381C-0105-4E48-9363-47270E89B984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C8381C-0105-4E48-9363-47270E89B984}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
