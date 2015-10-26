@@ -11,6 +11,7 @@ namespace LinqSubsets
         {
             const int target = 20;
             var numbers = new int[] { 1, 2, 5, 8, 12, 14, 9 };
+
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
