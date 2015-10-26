@@ -18,7 +18,7 @@ namespace FindSum20
             Console.WriteLine($"Number of Combinations: {SumCounter(numbers, target)}");
 
             stopWatch.Stop();
-            Console.WriteLine($"Elapsed time: {stopWatch.Elapsed}");
+            Console.WriteLine($"Elapsed time: {stopWatch.Elapsed.TotalMilliseconds}");
             Console.ReadKey();
         }
 

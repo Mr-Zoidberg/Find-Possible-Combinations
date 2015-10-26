@@ -55,7 +55,7 @@ namespace BinarySearch
                             break;
                         }
 
-                        var next = Array.BinarySearch(array, remains < target / 2 ? 0 : i + 1, j - 1, remains);
+                        var next = Array.BinarySearch(array, i + 1 < array.Length ? i + 1 : i, j - i, remains);
 
                         next = next < 0 ? -(next + 2) : next;
                         
