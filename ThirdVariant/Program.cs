@@ -12,14 +12,14 @@ namespace ThirdVariant
         static void Main(string[] args)
         {
             const int target = 20;
-            var numbers = new int[] { 1, 2, 5, 8, 12, 14, 9 };
+            var numbers = new [] { 1, 2, 5, 8, 12, 14, 9 };
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
             var result = GetSubsets(numbers, target, "");
 
             stopWatch.Stop();
-            Console.WriteLine($"Elapsed time: {stopWatch.Elapsed}");
+            Console.WriteLine($"Elapsed time: {stopWatch.Elapsed.TotalMilliseconds}");
 
             foreach (var subset in result) Console.WriteLine($"{subset} = {target}");
             Console.WriteLine($"Number of Combinations: {result.Count()}");

@@ -22,61 +22,36 @@ namespace BinarySearch
             stopWatch.Stop();
             Console.WriteLine($"Elapsed time: {stopWatch.Elapsed.TotalMilliseconds}");
 
-            foreach (var s in subsets) Console.WriteLine(s);
+            foreach (var s in subsets) Console.WriteLine($"{s} = {target}");
             Console.WriteLine($"Number of Combinations: {subsets.Count()}");
             Console.ReadKey();
         }
 
-        static IEnumerable<string> GetSubsets(int[] array, int target)
-        {
-            Array.Sort((Array) array);
+
+        private static IEnumerable<string> GetSubsets(int[] array, int target)
+        {      
+            Array.Sort((Array)array);
             List<string> result = new List<string>();
- 
-            for (int i = 0; i < array.Length; i++)
-            {   
-                
-                for (int j = array.Length - 1; j > i; j--)
+
+            for (int i = array.Length-1; i >= 0; i--)
+            {
+                var eq = $"{array[i]}";
+                var sum = array[i];
+                var toAdd = 0;
+
+                while (sum != target)
                 {
-                    var sum = 0;
-                    string eq = $"{array[i]} + {array[j]}";
-                    var consistent = true;
-                    var addToSum = 0;
+                    var mid = Array.BinarySearch(array, 0, sum <= target / 2 && sum != array[i] ? array.Length - 1 : i, target - sum);
+                    mid = mid < 0 ? ~mid - 1 : mid;
+                    if (mid == i  || mid < 0 || toAdd == array[mid] ) break;
 
-                    if (sum + array[j] == target) continue;
-                    sum = array[i] + array[j];
-                    
-                    while (sum != target)
-                    {
-                        var remains = target - sum;
-                        if (remains == 0) break;
-                        if (sum > target)
-                        {
-                            consistent = false;
-                            break;
-                        }
-
-                        var next = Array.BinarySearch(array, i + 1 < array.Length ? i + 1 : i, j - i, remains);
-
-                        next = next < 0 ? -(next + 2) : next;
-                        
-                        if (next == i || next == j || array[next] == addToSum)
-                        {
-                            consistent = false;
-                            break;
-                        }
-                        addToSum = array[next];
-
-                        sum += addToSum;
-                        eq += $" + {addToSum}";
-                    }
-
-                    if (!consistent) continue;
-                    result.Add($"{eq} = {target}");
+                    toAdd = array[mid];
+                    sum += array[mid];
+                    eq += $" + {array[mid]}";
+                    if (sum == target) result.Add(eq);
                 }
             }
             return result;
         }
-
-       
     }
 }
